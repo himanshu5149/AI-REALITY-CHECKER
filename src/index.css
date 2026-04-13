@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-brutal-black: #0a0a0a;
+  --color-brutal-white: #f5f5f5;
+  --color-brutal-red: #ff3b30;
+  --color-brutal-yellow: #ffcc00;
+  --color-brutal-green: #34c759;
+}
+
+@layer base {
+  body {
+    @apply bg-brutal-black text-brutal-white font-sans antialiased selection:bg-brutal-red selection:text-white;
+  }
+}
+
+@utility brutal-border {
+  @apply border-2 border-brutal-white;
+}
+
+@utility brutal-shadow {
+  @apply shadow-[4px_4px_0px_0px_rgba(245,245,245,1)];
+}
+
+@utility brutal-shadow-red {
+  @apply shadow-[4px_4px_0px_0px_rgba(255,59,48,1)];
+}
+
+@utility brutal-card {
+  @apply brutal-border bg-brutal-black p-6 transition-all;
+}
+
+@utility brutal-input {
+  @apply w-full bg-transparent brutal-border p-4 font-mono text-lg focus:outline-none focus:ring-2 focus:ring-brutal-red transition-all;
+}
+
+@utility brutal-btn {
+  @apply brutal-border bg-brutal-white text-brutal-black px-8 py-4 font-display font-bold text-xl uppercase tracking-tighter hover:bg-brutal-red hover:text-white hover:brutal-shadow-red active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
